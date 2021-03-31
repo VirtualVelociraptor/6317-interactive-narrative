@@ -2,3 +2,30 @@ body {
   background: black;
   color: white;
 }
+
+#content {
+  margin: 20px auto;
+  width: 60vw;
+  background: #222;
+  padding: 14px;
+  min-height: 50vh;
+}
+
+#content img {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+button {
+  margin: 14px;
+  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+  border-radius: 100px;
+  padding: 14px 28px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}

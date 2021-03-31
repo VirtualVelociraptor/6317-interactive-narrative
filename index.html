@@ -1,43 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prototype</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="content"></div>
 
-  <div id="content">
-  
-  </div>
+    <template id="intro">
+      <img src="img/intro.png" />
 
-  <button data-link="home">Load Home</button>
-  
+      <button data-link="intro2">Next</button>
+    </template>
 
+    <template id="intro2">
+      <img src="img/intro2.png" />
 
-<template id="home">
-  Home template
+      <button data-link="intro3">Next</button>
+    </template>
 
-  <button data-link="other">Load Other</button>
-  <script>
-    console.log('fsdfdsfsdfdsfsfd');
+    <template id="intro3">
+      <img src="img/intro3.png" />
 
-  </script>
-</template>
+      <button data-link="courtyard">Go to courtyard</button>
+      <button data-link="gotoroom">Go to room</button>
+    </template>
 
-<template id="other">
-some other template
-  <script>
-    console.log('fsdfdsfsdfdsfsfd');
+    <template id="courtyard">
+      <img src="img/courtyard.png" />
 
-  </script>
-</template>
+      <button data-link="pinkchampagne">Explore the hotel</button>
+      <button data-link="gotoroom">Go back to room</button>
+    </template>
 
+    <template id="gotoroom">
+      <img src="img/gotoroom.png" />
 
+      <button data-link="feast1">Investigate noise</button>
+    </template>
 
-  <script src="main.js"></script>
-</body>
+    <template id="pinkchampagne">
+      <img src="img/pinkchampagne.png" />
+
+      <button data-link="gotoroom">Go to room</button>
+    </template>
+
+    <template id="feast1">
+      <img src="img/feast1.png" />
+
+      <button data-link="feast2">Next</button>
+    </template>
+
+    <template id="feast2">
+      <img src="img/feast2.png" />
+
+      <button data-link="runaway">Run</button>
+    </template>
+
+    <template id="runaway">
+      <img src="img/runaway.png" />
+
+      <button data-link="runaway">Run</button>
+    </template>
+
+    <script src="main.js"></script>
+  </body>
 </html>
-

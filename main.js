@@ -3,24 +3,25 @@
   const $ = document.querySelector.bind(document);
 
   // main div where all content will get rendered
-  const contentWrapper = $('#content');
+  const contentWrapper = $("#content");
 
   // simple helper method to make links between pages easy to set up
-  document.addEventListener('click', (event) => {
+  document.addEventListener("click", (event) => {
     // look for elements with the data-link attribute
-    if (!event.target.getAttribute('data-link')) {
-      return;
+    const templateId = event.target.getAttribute("data-link");
+
+    if (templateId) {
+      loadTemplate(templateId);
     }
+  });
 
-    const pageId = event.target.getAttribute('data-link');
+  loadTemplate("intro");
 
+  function loadTemplate(templateId) {
     // clear out current page
-    contentWrapper.innerHTML = '';
+    contentWrapper.innerHTML = "";
 
     // add content from new page template
-    contentWrapper.append(
-      $(`template#${pageId}`).content.cloneNode(true)
-    );
-  });
+    contentWrapper.append($(`template#${templateId}`).content.cloneNode(true));
+  }
 })();
-
