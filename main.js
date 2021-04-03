@@ -1,3 +1,6 @@
+// register the user's name
+const userName = prompt("Greetings stranger! What is your name?", "Nicholas Cage");
+
 (function () {
   // just a shorthand for queries
   const $ = document.querySelector.bind(document);
@@ -23,5 +26,6 @@
 
     // add content from new page template
     contentWrapper.append($(`template#${templateId}`).content.cloneNode(true));
+    document.querySelector(".name").innerHTML = userName;
   }
 })();

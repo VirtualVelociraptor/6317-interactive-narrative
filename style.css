@@ -29,3 +29,8 @@ button {
   cursor: pointer;
   text-transform: uppercase;
 }
+
+.storytext {
+  font-size: larger;
+  font-family: fantasy;
+}
