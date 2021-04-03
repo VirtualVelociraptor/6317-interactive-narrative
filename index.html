@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prototype</title>
+    <title>Interactive Narrative Prototype</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -12,58 +12,59 @@
 
     <template id="intro">
       <img src="img/intro.png" />
-
+      <p class="storytext">This is a story about <span class="name"></span>, as aspiring young actor. One sunny afternoon they were driving through California for an upcoming audition.</p>
       <button data-link="intro2">Next</button>
     </template>
 
     <template id="intro2">
       <img src="img/intro2.png" />
-
+      <p class="storytext"><span class="name"></span> decides to pull over and stay in a brightly-lit hotel.</p>
       <button data-link="intro3">Next</button>
     </template>
 
     <template id="intro3">
       <img src="img/intro3.png" />
-
+      <p class="storytext"><span class="name"></span> enters lobby and is greeted by a friendly bellhop holding a candle.</p>
       <button data-link="courtyard">Go to courtyard</button>
       <button data-link="gotoroom">Go to room</button>
     </template>
-
+    
     <template id="courtyard">
       <img src="img/courtyard.png" />
-
+      <p class="storytext"><span class="name"></span> sees dancing by the courtyard pool and talks to some of the fellow guests.</p>
       <button data-link="pinkchampagne">Explore the hotel</button>
       <button data-link="gotoroom">Go back to room</button>
     </template>
 
     <template id="gotoroom">
       <img src="img/gotoroom.png" />
-
+      <p class="storytext">After returning to room, <span class="name"></span> is woken up by noise and heads out to investigate.</p>
       <button data-link="feast1">Investigate noise</button>
     </template>
 
     <template id="pinkchampagne">
       <img src="img/pinkchampagne.png" />
-
+      <p class="storytext"><span class="name"></span> meets the concierge again and is offered pink champagne.</p>
       <button data-link="gotoroom">Go to room</button>
     </template>
 
     <template id="feast1">
       <img src="img/feast1.png" />
-
+      <p class="storytext"><span class="name"></span> enters the big dining hall and sees people dig into a fabulously-cooked bird.</p>
       <button data-link="feast2">Next</button>
     </template>
 
     <template id="feast2">
       <img src="img/feast2.png" />
-
+      <p class="storytext">But the food was an illusion and was in actuality a rotting carcass. <span class="name"></span> is horrified.</p>
       <button data-link="runaway">Run</button>
     </template>
 
     <template id="runaway">
       <img src="img/runaway.png" />
-
-      You must escape the hotel. Where will you run?
+      <p class="storytext"><span class="name"></span> runs from the crazy party of delight. (Depending on narrative options, story ends or loops.)</p>
+      
+      <p class="storytext">You must escape the hotel. Where will you run?</p>
 
       <button data-link="room1">Up</button>
       <button data-link="room2">Down</button>
@@ -74,9 +75,9 @@
     <template id="room1">
       <img src="https://www.placecage.com/700/500" />
 
-      <p>Room One</p>
+      <p class="storytext">Room One</p>
       
-      You must escape the hotel. Where will you run?
+      <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>
       
       <button data-link="room5">Up</button>
       <button data-link="room2">Down</button>
@@ -87,9 +88,9 @@
     <template id="room2">
       <img src="https://www.placecage.com/600/500" />
       
-      <p>Room Two</p>
+      <p class="storytext">Room Two</p>
       
-      You must escape the hotel. Where will you run?
+      <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>
       
       <button data-link="room1">Up</button>
       <button data-link="room5">Down</button>
@@ -100,9 +101,9 @@
     <template id="room3">
       <img src="https://www.placecage.com/800/400" />
       
-      <p>Room Three</p>
+      <p class="storytext">Room Three</p>
       
-      You must escape the hotel. Where will you run?
+      <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>
       
       <button data-link="room1">Up</button>
       <button data-link="room2">Down</button>
@@ -113,9 +114,9 @@
     <template id="room4">
       <img src="https://www.placecage.com/700/450" />
       
-      <p>Room Four</p>
+      <p class="storytext">Room Four</p>
 
-      You must escape the hotel. Where will you run?
+      <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>
     
       <button data-link="room1">Up</button>
       <button data-link="room2">Down</button>
@@ -126,9 +127,9 @@
     <template id="room5">
       <img src="https://www.placecage.com/650/500" />
 
-      <p>Room Five</p>
+      <p class="storytext">Room Five</p>
 
-      You must escape the hotel. Where will you run?
+      <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>
     
       <button data-link="room4">Up</button>
       <button data-link="room3">Down</button>
