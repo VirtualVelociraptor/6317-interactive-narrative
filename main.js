@@ -1,5 +1,5 @@
 // register the user's name
-const userName = prompt("Greetings stranger! What is your name?", "Nicholas Cage");
+const userName = prompt("Greetings stranger! What is your name?", "Baby Yoda");
 
 (function () {
   // just a shorthand for queries
