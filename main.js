@@ -1,4 +1,4 @@
-// register the user's name
+// register the user's name, default is Baby Yoda
 const userName = prompt("Greetings stranger! What is your name?", "Baby Yoda");
 
 (function () {
@@ -26,6 +26,13 @@ const userName = prompt("Greetings stranger! What is your name?", "Baby Yoda");
 
     // add content from new page template
     contentWrapper.append($(`template#${templateId}`).content.cloneNode(true));
-    document.querySelector(".name").innerHTML = userName;
+    
+    if(userName != null){
+      document.querySelector(".name").innerHTML = userName;
+    }
+    else{
+      document.querySelector(".name").innerHTML = "Baby Yoda";
+    }
+    
   }
 })();
