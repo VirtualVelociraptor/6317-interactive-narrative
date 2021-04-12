@@ -4,7 +4,6 @@
   --color-blue: #33a0df;
   --color-green: #37f1b3;
   --color-yellow: #f5d273;
-
 }
 
 body {
@@ -29,7 +28,6 @@ body {
 button {
   margin: 14px;
   background: linear-gradient(-55deg, var(--color-red) 0%, var(--color-gold) 100%);
-  border-radius: 100px;
   padding: 14px 28px;
   color: white;
   font-weight: bold;
@@ -64,13 +62,10 @@ button[data-answer] {
 button:before {
 	position: absolute;
 	content:"";
-  border-radius: 100px;
-
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;	
-
   transition: 0.3s ease-out;
 }
 
