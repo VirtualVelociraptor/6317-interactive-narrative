@@ -1,8 +1,17 @@
+:root {
+  --color-red: #d53369;
+  --color-gold: #daae51;
+  --color-blue: #33a0df;
+  --color-green: #37f1b3;
+  --color-yellow: #f5d273;
+
+}
+
 body {
+
   background: black;
   color: white;
 }
-
 #content {
   margin: 20px auto;
   width: 60vw;
@@ -19,7 +28,7 @@ body {
 
 button {
   margin: 14px;
-  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+  background: linear-gradient(-55deg, var(--color-red) 0%, var(--color-gold) 100%);
   border-radius: 100px;
   padding: 14px 28px;
   color: white;
@@ -28,9 +37,56 @@ button {
   border: none;
   cursor: pointer;
   text-transform: uppercase;
+  position: relative;	
+  transition: 0.3s ease-out;
+  display: inline-block;
+  border: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+button[data-talk] {
+  background: linear-gradient(-55deg, var(--color-blue) 0%, var(--color-green) 100%);
+}
+
+button[data-answer] {
+  background: linear-gradient(-55deg, var(--color-green) 0%, var(--color-yellow) 100%);
 }
 
 .storytext {
   font-size: larger;
-  font-family: fantasy;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+
+button:before {
+	position: absolute;
+	content:"";
+  border-radius: 100px;
+
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;	
+
+  transition: 0.3s ease-out;
+}
+
+button:hover {
+	box-shadow: 5px 5px var(--color-red), -5px -5px var(--color-gold);
+}
+
+button[data-talk]:hover {
+	box-shadow: 5px 5px var(--color-blue), -5px -5px var(--color-green);
+}
+
+button[data-answer]:hover {
+	box-shadow: 5px 5px var(--color-green), -5px -5px var(--color-yellow);
+}
+
+button:hover::before {
+  border: 0px;
+}
+
