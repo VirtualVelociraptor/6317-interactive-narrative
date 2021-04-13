@@ -18,6 +18,20 @@
         text: "No thanks.",
         response: `"Maybe next time."`
       }
+    },
+    champagne: {
+      prompt: `"Would you like to have some champagne?"`,
+      accept: {
+        text: "Yeah, gimme gimme",
+        response: `"Enjoy your drink."`
+      },
+      refuse: {
+        text: "Naw bruh",
+        response: `"Well, see you later."`
+      }
+    },
+    feast: {
+
     }
   }
 
@@ -94,9 +108,12 @@
       dialogueCounter++;
       $('.storytext').textContent = dialogOpts.accept.response;
     } else if (answer === 'no') {
-      dialogueCounter++;
+      dialogueCounter--;
       $('.storytext').textContent = dialogOpts.refuse.response;
     }
+
+
+    console.log("Dialogue Counter: ", dialogueCounter);
 
     $all('[data-answer]').forEach(i => i.remove());
   }
