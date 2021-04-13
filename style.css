@@ -16,7 +16,7 @@ body {
   width: 60vw;
   background: #222;
   padding: 14px;
-  min-height: 50vh;
+  min-height: 600px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -55,6 +55,7 @@ button:focus {
   outline: none;
 }
 
+
 button[data-talk] {
   background: linear-gradient(-55deg, var(--color-blue) 0%, var(--color-green) 100%);
 }
@@ -62,8 +63,6 @@ button[data-talk] {
 button[data-answer] {
   background: linear-gradient(-55deg, var(--color-green) 0%, var(--color-yellow) 100%);
 }
-
-
 
 button:before {
 	position: absolute;
@@ -90,4 +89,3 @@ button[data-answer]:hover {
 button:hover::before {
   border: 0px;
 }
-
