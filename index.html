@@ -25,18 +25,72 @@
     <template id="intro3">
       <img src="img/intro3.png" />
       <p class="storytext"><span class="name"></span> enters lobby and is greeted by a friendly bellhop holding a candle.</p>
+      <button data-link="concierge">Explore the lobby</button>
       <button data-link="courtyard">Go to courtyard</button>
       <button data-link="gotoroom">Go to room</button>
     </template>
-    
-    <template id="courtyard">
-      <img src="img/courtyard.png" />
-      <p class="storytext"><span class="name"></span> sees dancing by the courtyard pool and talks to some of the fellow guests.</p>
-      
-      <button data-talk="swimsuit">Talk to pool lady</button>
 
-      <button data-link="pinkchampagne">Explore the hotel</button>
-      <button data-link="gotoroom">Go back to room</button>
+    <template id="concierge">
+      <img src="img/pinkchampagne.png">
+      <p class="storytext">The concierge is standing by a beautiful room full of mirrors. She is holding a bottle of pink beverage.</p>
+      <button data-talk="champagne">Talk to concierge</button>
+      <button data-link="pool">Go to pool</button>
+      <button data-link="bar">Go to the bar</button>
+      <button data-link="gotoroom">Go to room</button>
+    </template>
+
+    <template id="courtyard">
+      <img src="img/courtyard.png">
+      <p class="storytext"><span class="name"></span> decides to go to the courtyard where guests are dancing and partying.</p>
+      <button data-link="courtyard2">Next</button>
+    </template>
+
+    <template id="courtyard2">
+      <img src="img/courtyard2.png">
+      <p class="storytext">The concierge, clad with Tiffany jewelry, is dancing with a lot of pretty, pretty boys.</p>
+      <button data-talk="friends">Talk to concierge</button>
+      <button data-link="pool">Go to pool</button>
+      <button data-link="bar">Go to the bar</button>
+      <button data-link="gotoroom">Go to room</button>
+    </template>
+
+    <!-- <template id="courtyardfriends">
+      <img src="img/courtyard2.png">
+      <p class="storytext">She looks at <span class="name"></span> and says, "These are my friends! Do you want to go on a drive with us in my Mercedes Benz?"</p>
+      <button data-link="courtyard2yes">Sure!</button>
+      <button data-link="couryard3">No, thank you</button>
+    </template>
+
+    <template id="courtyard2yes">
+      <img src="img/courtyard2.png">
+      <p class="storytext">Great! We'll all meet in the lobby after dinner. It's going to be unforgettable!</p>
+      <button data-link="pool">Go to pool</button>
+      <button data-link="gotoroom">Go to room</button>
+    </template>
+
+    <template id="couryard3">
+      <img src="img/courtyard3.png">
+      <p class="storytext">The concierge shurgs and says to <span class="name"></span>, "Well it's your loss".</p>
+      <button data-link="pool">Go to pool</button>
+      <button data-link="gotoroom">Go to room</button>
+    </template> -->
+    
+    <template id="pool">
+      <img src="img/pool.png" />
+      <p class="storytext"><span class="name"></span> sees fellow guests lounging by the pool, chatting and having drinks.</p>    
+      <button data-talk="swimsuit">Talk to young lady</button>
+      <button data-link="courtyard">Go to courtyard</button>
+      <button data-link="bar">Go to the bar</button>
+      <button data-link="gotoroom">Go to room</button>
+    </template>
+
+    <template id="bar">
+      <img src="img/captain.png">
+      <p class="storytext">A man dressed in a Captain's unform is managing the bar.</p>
+      <button data-talk="captain">Call up the Captain</button>
+      <button data-link="courtyard">Go to courtyard</button>
+      <button data-link="pool">Go to pool</button>
+      <button data-link="gotoroom">Go to room</button>
     </template>
 
     <template id="gotoroom">
@@ -45,103 +99,104 @@
       <button data-link="feast1">Investigate noise</button>
     </template>
 
-    <template id="pinkchampagne">
+    <!-- <template id="concierge">
       <img src="img/pinkchampagne.png" />
       <p class="storytext"><span class="name"></span> ends up in a room filled with mirrors. The concierge is waiting, holding a bottle of pink liquid.</p>
-
       <button data-talk="champagne">Talk to concierge</button>
       <button data-link="gotoroom">Go to room</button>
-    </template>
+    </template> -->
 
     <template id="feast1">
       <img src="img/feast1.png" />
-      <p class="storytext"><span class="name"></span> enters the big dining hall and sees people dig into a fabulously-cooked bird.</p>
-     
+      <p class="storytext"><span class="name"></span> enters the big dining hall and sees people dig into a fabulously-cooked bird.</p>    
       <button data-link="feast2">Next</button>
     </template>
 
     <template id="feast2">
       <img src="img/feast2.png" />
-      <p class="storytext">But the food was an illusion and was in actuality a rotting carcass. <span class="name"></span> is horrified.</p>
+      <p class="storytext">But the food was an illusion and was in actuality a rotting carcass. <span class="name"></span> is horrified and feels like vomiting.</p>
+      <button data-link="bathroom1">Find the nearest bathroom</button>
+      <button data-link="leavefeast">Head back to room</button>
+    </template>
+
+    <template id="bathroom1">
+      <img src="img/girls.png">
+      <p class="storytext"><span class="name"></span> finds a bathroom, where they encounter three women, who <span class="name"></span> recognizes as Charles Manson's girlfriends.</p>
+      <button data-link="bathroom2">Next</button>
+    </template>
+
+    <template id="bathroom2">
+      <img src="img/girls.png">
+      <p class="storytext">They start singing, "Welcome to the Hotel California! Such a lovely place, such a lovely place. Such a lovely face! Plenty of room at the Hotel California. Any time of year. Any time of year! You can find it here!</p>
+      <button data-link="leavefeast">Head back to room</button>
+    </template>
+
+    <template id="leavefeast">
+      <img src="img/nightman.png">
+      <p class="storytext">As <span class="name"></span> heads back to the room to pack up their belongings, the nightman appears in the hallway.</p>
+      <button data-link="nightman">Next</button>
+    </template>
+
+    <template id="nightman">
+      <img src="img/nightman.png">
+      <p class="storytext">The nightman looks at <span class="name"></span> and says, "Relax. We are programmed to recieve. You can check-out anytime you like, but you can never leave!</p>
       <button data-link="runaway">Run</button>
     </template>
 
     <template id="runaway">
       <img src="img/runaway.png" />
-      <p class="storytext"><span class="name"></span> runs from the crazy party of delight. (Depending on narrative options, story ends or loops.)</p>
-      
+      <p class="storytext"><span class="name"></span> runs from the crazy party of delight. (Depending on narrative options, story ends or loops.)</p>     
       <p class="storytext">You must escape the hotel. Where will you run?</p>
-
       <button data-link="room1">Up</button>
       <button data-link="room2">Down</button>
       <button data-link="room3">Left</button>
       <button data-link="room4">Right</button>
     </template>
 
-    <template id="room1">
-      
+    <template id="room1">     
       <img src="img/hallway1.png" />
-
-      <p class="storytext">Room One</p>
-      
-      <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>
-      
+      <p class="storytext">Room One</p>      
+      <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>    
       <button data-link="room5">Up</button>
       <button data-link="room2">Down</button>
       <button data-link="room3">Left</button>
       <button data-link="room4">Right</button>
     </template>
     
-    <template id="room2">
-     
-      <img src="img/hallway2.png" />
-      
-      <p class="storytext">Room Two</p>
-      
-      <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>
-      
+    <template id="room2">    
+      <img src="img/hallway2.png" />     
+      <p class="storytext">Room Two</p>      
+      <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>     
       <button data-link="room1">Up</button>
       <button data-link="room5">Down</button>
       <button data-link="room3">Left</button>
       <button data-link="room4">Right</button>
     </template>
     
-    <template id="room3">
-      
-      <img src="img/hallway3.png" />
-      
-      <p class="storytext">Room Three</p>
-      
-      <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>
-      
+    <template id="room3">    
+      <img src="img/hallway3.png" />    
+      <p class="storytext">Room Three</p>     
+      <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>      
       <button data-link="room1">Up</button>
       <button data-link="room2">Down</button>
       <button data-link="room5">Left</button>
       <button data-link="room4">Right</button>
     </template>
     
-    <template id="room4">
-      
-      <img src="img/hallway4.png" />
-      
+    <template id="room4">     
+      <img src="img/hallway4.png" />     
       <p class="storytext">Room Four</p>
-
-      <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>
-    
+      <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>   
       <button data-link="room1">Up</button>
       <button data-link="room2">Down</button>
       <button data-link="room3">Left</button>
       <button data-link="room5">Right</button>
     </template>
 
-    <template id="room5">
-     
+    <template id="room5">     
       <img src="img/hallway1.png" />
-
       <p class="storytext">Room Five</p>
-
-      <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>
-    
+      <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>    
       <button data-link="room4">Up</button>
       <button data-link="room3">Down</button>
       <button data-link="room2">Left</button>

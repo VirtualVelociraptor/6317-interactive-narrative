@@ -20,7 +20,7 @@
       }
     },
     champagne: {
-      prompt: `"Would you like to have some champagne?"`,
+      prompt: `"Hi! Would you like to have some champagne? It's on the house."`,
       accept: {
         text: "Yeah, gimme gimme",
         response: `"Enjoy your drink."`
@@ -28,6 +28,28 @@
       refuse: {
         text: "Naw bruh",
         response: `"Well, see you later."`
+      }
+    },
+    friends: {
+      prompt: `"These are my friends! Do you want to go on a drive with us in my Mercedes Benz?"`,
+      accept: {
+        text: "Sure!",
+        response: `"Great! We'll all meet in the lobby after dinner. It's going to be unforgettable!"`
+      },
+      refuse: {
+        text: "No, thank you",
+        response: `"Sigh, it's your loss."`
+      }
+    },
+    captain: {
+      prompt: `"You look tired traveler, may I offer you a drink to unwind?"`,
+      accept: {
+        text: "Please bring me some wine",
+        response: `"That's what I like to hear! We haven't had that spirit here since 1969."`
+      },
+      refuse: {
+        text: "I'll just have some water",
+        response: `"Shame, water doesn't make the voices call from far away..."`
       }
     },
     feast: {
