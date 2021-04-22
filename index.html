@@ -34,12 +34,13 @@
 
     <template id="concierge">
       <img src="img/pinkchampagne.png">
-      <p class="storytext">The concierge is standing by a beautiful room full of mirrors. She is holding a bottle of pink beverage.</p>
-      <button data-talk="champagne">Talk to concierge</button>
+      <p class="storytext">The manager is standing by a beautiful room full of mirrors. She is holding a bottle of pink beverage.</p>
+      <button data-talk="champagne">Talk to manager</button>
       <button data-link="pool">Go to pool</button>
       <button data-link="bar">Go to the bar</button>
+      <button data-link="courtyard">Go to courtyard</button>
       <button data-link="gotoroom">Go to room</button>
-    </template>
+    </template>   
 
     <template id="courtyard">
       <img src="img/courtyard.png">
@@ -50,32 +51,19 @@
     <template id="courtyard2">
       <img src="img/courtyard2.png">
       <p class="storytext">The concierge, clad with Tiffany jewelry, is dancing with a lot of pretty, pretty boys.</p>
-      <button data-talk="friends">Talk to concierge</button>
+      <button data-talk="friends">Chat with concierge</button>
       <button data-link="pool">Go to pool</button>
       <button data-link="bar">Go to the bar</button>
       <button data-link="gotoroom">Go to room</button>
     </template>
 
-    <!-- <template id="courtyardfriends">
-      <img src="img/courtyard2.png">
-      <p class="storytext">She looks at <span class="name"></span> and says, "These are my friends! Do you want to go on a drive with us in my Mercedes Benz?"</p>
-      <button data-link="courtyard2yes">Sure!</button>
-      <button data-link="couryard3">No, thank you</button>
-    </template>
-
-    <template id="courtyard2yes">
-      <img src="img/courtyard2.png">
-      <p class="storytext">Great! We'll all meet in the lobby after dinner. It's going to be unforgettable!</p>
-      <button data-link="pool">Go to pool</button>
-      <button data-link="gotoroom">Go to room</button>
-    </template>
-
-    <template id="couryard3">
+    <template id="courtyard2">
       <img src="img/courtyard3.png">
-      <p class="storytext">The concierge shurgs and says to <span class="name"></span>, "Well it's your loss".</p>
+      <p class="storytext">The concierge looks at <span class="name"></span> and says, "I'm taking a break from the dancing."</p>
       <button data-link="pool">Go to pool</button>
+      <button data-link="bar">Go to the bar</button>
       <button data-link="gotoroom">Go to room</button>
-    </template> -->
+    </template>
     
     <template id="pool">
       <img src="img/pool.png" />
@@ -86,10 +74,26 @@
       <button data-link="gotoroom">Go to room</button>
     </template>
 
+    <template id="pool">
+      <img src="img/pool.png" />
+      <p class="storytext"><span class="name"></span> sees fellow guests lounging by the pool. They look like they've had one too many drinks.</p>    
+      <button data-link="courtyard">Go to courtyard</button>
+      <button data-link="bar">Go to the bar</button>
+      <button data-link="gotoroom">Go to room</button>
+    </template>
+
     <template id="bar">
       <img src="img/captain.png">
-      <p class="storytext">A man dressed in a Captain's unform is managing the bar.</p>
+      <p class="storytext">A man dressed in a Captain's uniform is managing the bar.</p>
       <button data-talk="captain">Call up the Captain</button>
+      <button data-link="courtyard">Go to courtyard</button>
+      <button data-link="pool">Go to pool</button>
+      <button data-link="gotoroom">Go to room</button>
+    </template>
+
+    <template id="bar">
+      <img src="img/captain.png">
+      <p class="storytext">A man dressed in a Captain's uniform is managing the bar. He seems busy speaking to a new guest.</p>
       <button data-link="courtyard">Go to courtyard</button>
       <button data-link="pool">Go to pool</button>
       <button data-link="gotoroom">Go to room</button>
@@ -101,12 +105,6 @@
       <button data-link="feast1">Investigate noise</button>
     </template>
 
-    <!-- <template id="concierge">
-      <img src="img/pinkchampagne.png" />
-      <p class="storytext"><span class="name"></span> ends up in a room filled with mirrors. The concierge is waiting, holding a bottle of pink liquid.</p>
-      <button data-talk="champagne">Talk to concierge</button>
-      <button data-link="gotoroom">Go to room</button>
-    </template> -->
 
     <template id="feast1">
       <img src="img/feast1.png" />
