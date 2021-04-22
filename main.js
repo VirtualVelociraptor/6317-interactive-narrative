@@ -9,7 +9,7 @@
   // object to hold dialog text and options
   const dialog = {
     swimsuit: {
-      prompt: `"Hey are you new here? Wanna have some drugs?"`,
+      prompt: `"Hey are you new here? Wanna take a hit?"`,
       accept: {
         text: "Sure, why not?",
         response: `"Here, don't inhale too much!"`
@@ -20,20 +20,20 @@
       }
     },
     champagne: {
-      prompt: `"Hi! Would you like to have some champagne? It's on the house."`,
+      prompt: `"Hi, and welcome! Would you like to have some champagne? It's on the house."`,
       accept: {
-        text: "Yeah, gimme gimme",
-        response: `"Enjoy your drink."`
+        text: "Sure, I'll have a glass.",
+        response: `"Enjoy your drink. Feel free to explore the hotel!"`
       },
       refuse: {
-        text: "Naw bruh",
-        response: `"Well, see you later."`
+        text: "No, I'll pass. Thanks.",
+        response: `"Well, see you around."`
       }
     },
     friends: {
       prompt: `"These are my friends! Do you want to go on a drive with us in my Mercedes Benz?"`,
       accept: {
-        text: "Sure!",
+        text: "Yeah, sounds fun!",
         response: `"Great! We'll all meet in the lobby after dinner. It's going to be unforgettable!"`
       },
       refuse: {
@@ -76,6 +76,8 @@
     } else if (talkId) {
       // dialog logic
       loadDialogue(talkId, event.target);
+      // replace the template if player previousy spoke to the hotel person
+      document.getElementById(document.querySelector('[data-talk]').getAttribute("class")).setAttribute("id", "null");
     } else if (answerId) {
       // response to dialogue
       respondToDialogue(answerId);
@@ -89,14 +91,23 @@
     contentWrapper.innerHTML = "";
 
     // add content from new page template
-    contentWrapper.append($(`template#${templateId}`).content.cloneNode(true));
+    // contentWrapper.append($(`template#${templateId}`).content.cloneNode(true));
+
+    const templateContent = $(`template#${templateId}`).content.cloneNode(true);
+    console.log("templateID: " + templateId);
+
+    if(templateContent.querySelector('[data-talk]') != null){
+      templateContent.querySelector('[data-talk]').setAttribute("class", templateId);
+      console.log("This is the class: " + templateContent.querySelector('[data-talk]').getAttribute("class"));
+    }
+
+    contentWrapper.append(templateContent);
 
     if (userName != null) {
       $(".name").innerHTML = userName;
     } else {
       $(".name").innerHTML = "Baby Yoda";
     }
-
   }
 
   function loadDialogue(talkId, btnElement) {
@@ -118,6 +129,7 @@
 
       btnElement.after(yesBtn, noBtn);
       btnElement.remove();
+      console.log("You decided to engage somebody!")
     }, 500);
 
   }
@@ -139,7 +151,6 @@
 
     $all('[data-answer]').forEach(i => i.remove());
   }
-
 
   // debugging helpers
   if (window.location.search.includes('debug=true')) {
