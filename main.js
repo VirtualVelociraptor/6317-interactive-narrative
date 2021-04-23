@@ -78,6 +78,8 @@
     const talkId = event.target.getAttribute("data-talk");
     const answerId = event.target.getAttribute("data-answer");
 
+    $("#playAudio").play();
+
     if (templateId) {
       // check for running buttons
       var dir;
