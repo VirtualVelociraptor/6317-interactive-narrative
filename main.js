@@ -66,8 +66,8 @@
   // counter to track positive or negative responses???
   let dialogueCounter = 0;
 
-  // register the user's name, default is Baby Yoda
-  const userName = prompt("Greetings stranger! What is your name?", "Baby Yoda");
+  // register the user's name, default is Don Henley
+  const userName = prompt("Greetings stranger! What is your name?", "Don Henley");
 
 
   // simple helper method to make links between pages easy to set up
@@ -156,8 +156,10 @@
 
       btnElement.after(yesBtn, noBtn);
       btnElement.remove();
-      console.log("You decided to engage somebody!")
-    }, 500);
+
+      $all("[data-link]").forEach(b => b.style.display = "none");
+
+    }, 200);
 
   }
 
@@ -177,6 +179,7 @@
     console.log("Dialogue Counter: ", dialogueCounter);
 
     $all('[data-answer]').forEach(i => i.remove());
+    $all("[data-link]").forEach(b => b.style.display = "inline-block");
   }
 
   function getEndingTemplate() {
