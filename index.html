@@ -147,60 +147,81 @@
       <img src="img/runaway.png" />
       <p class="storytext"><span class="name"></span> runs from the crazy party of delight. (Depending on narrative options, story ends or loops.)</p>     
       <p class="storytext">You must escape the hotel. Where will you run?</p>
-      <button data-link="room1">Up</button>
-      <button data-link="room2">Down</button>
-      <button data-link="room3">Left</button>
-      <button data-link="room4">Right</button>
+      <button data-run="forward" data-link="room1">Forward</button>
+      <button data-run="back" data-link="room2">Back</button>
+      <button data-run="left" data-link="room3">Left</button>
+      <button data-run="right" data-link="room4">Right</button>
     </template>
 
     <template id="room1">     
       <img src="img/hallway1.png" />
       <p class="storytext">Room One</p>      
       <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>    
-      <button data-link="room5">Up</button>
-      <button data-link="room2">Down</button>
-      <button data-link="room3">Left</button>
-      <button data-link="room4">Right</button>
+      <button data-run="forward" data-link="room5">Forward</button>
+      <button data-run="back" data-link="room2">Back</button>
+      <button data-run="left" data-link="room3">Left</button>
+      <button data-run="right" data-link="room4">Right</button>
     </template>
     
     <template id="room2">    
       <img src="img/hallway2.png" />     
       <p class="storytext">Room Two</p>      
       <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>     
-      <button data-link="room1">Up</button>
-      <button data-link="room5">Down</button>
-      <button data-link="room3">Left</button>
-      <button data-link="room4">Right</button>
+      <button data-run="forward" data-link="room1">Forward</button>
+      <button data-run="back" data-link="room5">Back</button>
+      <button data-run="left" data-link="room3">Left</button>
+      <button data-run="right" data-link="room4">Right</button>
     </template>
     
     <template id="room3">    
       <img src="img/hallway3.png" />    
       <p class="storytext">Room Three</p>     
       <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>      
-      <button data-link="room1">Up</button>
-      <button data-link="room2">Down</button>
-      <button data-link="room5">Left</button>
-      <button data-link="room4">Right</button>
+      <button data-run="forward" data-link="room1">Forward</button>
+      <button data-run="back" data-link="room2">Back</button>
+      <button data-run="left" data-link="room5">Left</button>
+      <button data-run="right" data-link="room4">Right</button>
     </template>
     
     <template id="room4">     
       <img src="img/hallway4.png" />     
       <p class="storytext">Room Four</p>
       <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>   
-      <button data-link="room1">Up</button>
-      <button data-link="room2">Down</button>
-      <button data-link="room3">Left</button>
-      <button data-link="room5">Right</button>
+      <button data-run="forward" data-link="room1">Forward</button>
+      <button data-run="back" data-link="room2">Back</button>
+      <button data-run="left" data-link="room3">Left</button>
+      <button data-run="right" data-link="room5">Right</button>
     </template>
 
     <template id="room5">     
       <img src="img/hallway1.png" />
       <p class="storytext">Room Five</p>
       <p class="storytext"><span class="name"></span> must escape the hotel. Where will you run?</p>    
-      <button data-link="room4">Up</button>
-      <button data-link="room3">Down</button>
-      <button data-link="room2">Left</button>
-      <button data-link="room1">Right</button>
+      <button data-run="forward" data-link="room4">Forward</button>
+      <button data-run="back" data-link="room3">Back</button>
+      <button data-run="left" data-link="room2">Left</button>
+      <button data-run="right" data-link="room1">Right</button>
+    </template>
+
+    <template id="escape">
+      <img src="img/hallway4.png" />
+      <p class="storytext"><span class="name"></span> sees an exit door in the distance.</p>
+      
+      <button data-link="ending">Escape</button>  
+    </template>
+
+    <template id="good_end">
+      <img src="img/intro2.png" />
+      <p class="storytext">GOOD ENDING</p>
+      <p class="storytext"><span class="name"></span>good ending TBD</p>
+      
+    </template>
+    
+    <template id="bad_end">
+      <img src="img/intro2.png" />
+      <p class="storytext">BAD ENDING</p>
+      <p class="storytext"><span class="name"></span> bad ending TBD.</p>
+    
     </template>
 
     <script src="main.js"></script>

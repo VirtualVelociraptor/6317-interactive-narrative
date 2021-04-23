@@ -37,18 +37,18 @@
         response: `"Great! We'll all meet in the lobby after dinner. It's going to be unforgettable!"`
       },
       refuse: {
-        text: "No, thank you",
+        text: "No, thank you.",
         response: `"Sigh, it's your loss."`
       }
     },
     captain: {
       prompt: `"You look tired traveler, may I offer you a drink to unwind?"`,
       accept: {
-        text: "Please bring me some wine",
+        text: "Please bring me some wine.",
         response: `"That's what I like to hear! We haven't had that spirit here since 1969."`
       },
       refuse: {
-        text: "I'll just have some water",
+        text: "I'll just have some water.",
         response: `"Shame, water doesn't make the voices call from far away..."`
       }
     },
@@ -56,6 +56,12 @@
 
     }
   }
+
+  // keep track of the directions the player clicks to run
+  const runDirections = [];
+
+  // sequence of directions to run to always escape
+  const escapeRunSequence = ["forward", "right", "back", "left"];
 
   // counter to track positive or negative responses???
   let dialogueCounter = 0;
@@ -67,11 +73,22 @@
   // simple helper method to make links between pages easy to set up
   document.addEventListener("click", (event) => {
     // look for elements with the data-link attribute
-    const templateId = event.target.getAttribute("data-link");
+    let templateId = event.target.getAttribute("data-link");
     const talkId = event.target.getAttribute("data-talk");
     const answerId = event.target.getAttribute("data-answer");
 
     if (templateId) {
+      // check for running buttons
+      var dir;
+      if (dir = event.target.getAttribute("data-run")) {
+        runDirections.push(dir);
+      }
+
+      //check if escape button
+      if (templateId === "ending") {
+        templateId = getEndingTemplate();
+      }
+
       loadTemplate(templateId);
     } else if (talkId) {
       // dialog logic
@@ -96,10 +113,22 @@
     const templateContent = $(`template#${templateId}`).content.cloneNode(true);
     console.log("templateID: " + templateId);
 
-    if(templateContent.querySelector('[data-talk]') != null){
+    if (templateContent.querySelector('[data-talk]') != null) {
       templateContent.querySelector('[data-talk]').setAttribute("class", templateId);
       console.log("This is the class: " + templateContent.querySelector('[data-talk]').getAttribute("class"));
     }
+
+    // check for and hide run direction buttons that have been used
+    templateContent.querySelectorAll("[data-run]").forEach(btn => {
+      if (runDirections.includes(btn.getAttribute("data-run"))) {
+        btn.remove();
+
+        // check how many buttons are left, if none, load the "escape" template instead
+        if (templateContent.querySelectorAll("[data-run]").length == 0) {
+          templateContent = $(`template#escape`).content.cloneNode(true);
+        }
+      }
+    });
 
     contentWrapper.append(templateContent);
 
@@ -150,6 +179,19 @@
     console.log("Dialogue Counter: ", dialogueCounter);
 
     $all('[data-answer]').forEach(i => i.remove());
+  }
+
+  function getEndingTemplate() {
+    // check if they got the correct escape sequence of directions
+    if (JSON.stringify(runDirections) == JSON.stringify(escapeRunSequence)) {
+      return "good_end";
+    } else {
+
+      if (dialogueCounter < 0)
+        return "good_end"
+
+      return "bad_end";
+    }
   }
 
   // debugging helpers
