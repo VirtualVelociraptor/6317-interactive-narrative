@@ -116,7 +116,7 @@
       <img src="img/feast2.png" />
       <p class="storytext">But the food was an illusion and was in actuality a rotting carcass. <span class="name"></span> is horrified and feels like vomiting.</p>
       <button data-link="bathroom1">Find the nearest bathroom</button>
-      <button data-link="leavefeast">Head back to room</button>
+      <button data-link="runaway">Run away</button>
     </template>
 
     <template id="bathroom1">
@@ -128,19 +128,7 @@
     <template id="bathroom2">
       <img src="img/girls.png">
       <p class="storytext">They start singing, "Welcome to the Hotel California! Such a lovely place, such a lovely place. Such a lovely face! Plenty of room at the Hotel California. Any time of year. Any time of year! You can find it here!</p>
-      <button data-link="leavefeast">Head back to room</button>
-    </template>
-
-    <template id="leavefeast">
-      <img src="img/nightman.png">
-      <p class="storytext">As <span class="name"></span> heads back to the room to pack up their belongings, the nightman appears in the hallway.</p>
-      <button data-link="nightman">Next</button>
-    </template>
-
-    <template id="nightman">
-      <img src="img/nightman.png">
-      <p class="storytext">The nightman looks at <span class="name"></span> and says, "Relax. We are programmed to recieve. You can check-out anytime you like, but you can never leave!</p>
-      <button data-link="runaway">Run</button>
+      <button data-link="runaway">Run away</button>
     </template>
 
     <template id="runaway">
@@ -216,12 +204,18 @@
       <p class="storytext"><span class="name"></span>good ending TBD</p>
       
     </template>
-    
+
     <template id="bad_end">
-      <img src="img/intro2.png" />
-      <p class="storytext">BAD ENDING</p>
-      <p class="storytext"><span class="name"></span> bad ending TBD.</p>
+      <img src="img/nightman.png">
+      <p class="storytext">As <span class="name"></span> opens the door, another hallway appears, standing in the middle is the nightman.</p>
+      <button data-link="nightman">Next</button>
+    </template>
     
+    <template id="nightman">
+      <img src="img/nightman.png">
+      <p class="storytext">The nightman looks at <span class="name"></span> and says, "Relax. We are programmed to recieve.
+        You can check-out anytime you like, but you can never leave!</p>
+      <!-- <button data-link="runaway">Run</button> -->
     </template>
 
     <script src="main.js"></script>

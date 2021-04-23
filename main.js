@@ -110,12 +110,10 @@
     // add content from new page template
     // contentWrapper.append($(`template#${templateId}`).content.cloneNode(true));
 
-    const templateContent = $(`template#${templateId}`).content.cloneNode(true);
-    console.log("templateID: " + templateId);
+    let templateContent = $(`template#${templateId}`).content.cloneNode(true);
 
     if (templateContent.querySelector('[data-talk]') != null) {
       templateContent.querySelector('[data-talk]').setAttribute("class", templateId);
-      console.log("This is the class: " + templateContent.querySelector('[data-talk]').getAttribute("class"));
     }
 
     // check for and hide run direction buttons that have been used
