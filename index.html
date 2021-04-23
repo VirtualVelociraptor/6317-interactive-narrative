@@ -199,10 +199,19 @@
     </template>
 
     <template id="good_end">
-      <img src="img/intro2.png" />
-      <p class="storytext">GOOD ENDING</p>
-      <p class="storytext"><span class="name"></span>good ending TBD</p>
+      <img src="img/ending_before.png" />
       
+      <p class="storytext"><span class="name"></span> pushes through the door into an open courtyard packed with people.</p>
+      <button data-link="fadeaway">Next</button>
+    </template>
+    
+    <template id="fadeaway">
+      <div class="crossfade">
+        <img src="img/ending_before.png" />
+        <img src="img/ending_after.png" />
+      </div>
+        
+      <p class="storytext">As <span class="name"></span> turns to leave the hotel forever, the crowd begins to fade away.</p>
     </template>
 
     <template id="bad_end">

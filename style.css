@@ -89,3 +89,30 @@ button[data-answer]:hover {
 button:hover::before {
   border: 0px;
 }
+
+.crossfade {
+  margin: auto;
+  position: relative;
+  width: 100%;
+}
+
+.crossfade img:first-of-type {
+  position: absolute;
+  display:  block;
+  animation: fadeout 5.5s ease-in-out 0.5s forwards;
+}
+
+.crossfade img:last-of-type {
+  display:  block;
+}
+
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
