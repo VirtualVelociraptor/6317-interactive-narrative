@@ -64,6 +64,7 @@
   const escapeRunSequence = ["forward", "right", "back", "left"];
 
   // counter to track positive or negative responses???
+  let responseScore = 0;
   let dialogueCounter = 0;
 
   // register the user's name, default is Don Henley
@@ -111,6 +112,11 @@
     // contentWrapper.append($(`template#${templateId}`).content.cloneNode(true));
 
     let templateContent = $(`template#${templateId}`).content.cloneNode(true);
+
+    // hide the go to room button until they have talked to at least two people
+    if (templateContent.querySelector("[data-link='gotoroom']") && dialogueCounter < 3) {
+      templateContent.querySelector("[data-link='gotoroom']").style.display = "none";
+    }
 
     if (templateContent.querySelector('[data-talk]') != null) {
       templateContent.querySelector('[data-talk]').setAttribute("class", templateId);
@@ -168,18 +174,25 @@
     const dialogOpts = dialog[talkId];
 
     if (answer === 'yes') {
-      dialogueCounter++;
+      responseScore++;
       $('.storytext').textContent = dialogOpts.accept.response;
     } else if (answer === 'no') {
-      dialogueCounter--;
+      responseScore--;
       $('.storytext').textContent = dialogOpts.refuse.response;
     }
 
+    dialogueCounter++;
 
-    console.log("Dialogue Counter: ", dialogueCounter);
+    console.log("Dialogue counter ", dialogueCounter);
+    console.log("Response Score: ", responseScore);
 
     $all('[data-answer]').forEach(i => i.remove());
     $all("[data-link]").forEach(b => b.style.display = "inline-block");
+
+    // hide the go to room button until they have talked to at least two people
+    if ($("[data-link='gotoroom']") && dialogueCounter < 3) {
+      $("[data-link='gotoroom']").style.display = "none";
+    }
   }
 
   function getEndingTemplate() {
@@ -188,7 +201,7 @@
       return "good_end";
     } else {
 
-      if (dialogueCounter < 0)
+      if (responseScore < 0)
         return "good_end"
 
       return "bad_end";
