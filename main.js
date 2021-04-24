@@ -58,7 +58,7 @@
   }
 
   // keep track of the directions the player clicks to run
-  const runDirections = [];
+  let runDirections = [];
 
   // sequence of directions to run to always escape
   const escapeRunSequence = ["forward", "right", "back", "left"];
@@ -77,6 +77,14 @@
     let templateId = event.target.getAttribute("data-link");
     const talkId = event.target.getAttribute("data-talk");
     const answerId = event.target.getAttribute("data-answer");
+    const resetBtn = event.target.getAttribute("data-reset");
+
+
+    if (resetBtn) {
+      // reset the game
+      window.location.reload();
+      return;
+    }
 
     $("#playAudio").play();
 

@@ -106,6 +106,20 @@ button:hover::before {
   display:  block;
 }
 
+img.horizontal-flip {
+  transform: scaleX(-1);
+}
+
+.fadein {
+  opacity: 0;
+  animation: fadein 6s ease-in-out 1s forwards;
+}
+
+.fadein-quick {
+  opacity: 0;
+  animation: fadein 3s ease-in-out 3s forwards;
+}
+
 
 @keyframes fadeout {
   0% {
@@ -116,3 +130,15 @@ button:hover::before {
     opacity: 0;
   }
 }
+
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+

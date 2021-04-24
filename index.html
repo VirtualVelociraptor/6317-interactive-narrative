@@ -14,13 +14,13 @@
 
     <template id="intro">
       <img src="img/intro.png" />
-      <p class="storytext">This is a story about <span class="name"></span>, as aspiring young actor. One sunny afternoon they were driving through California for an upcoming audition.</p>
+      <p class="storytext">This is a story about <span class="name"></span>, as aspiring young actor. He leaves his small town behind and drives through California for days for an upcoming audition.</p>
       <button data-link="intro2">Next</button>
     </template>
 
     <template id="intro2">
       <img src="img/intro2.png" />
-      <p class="storytext"><span class="name"></span> decides to pull over and stay in a brightly-lit hotel.</p>
+      <p class="storytext">Exhausted from the countless hours driving, <span class="name"></span> decides to pull over and stay in a brightly-lit hotel.</p>
       <button data-link="intro3">Next</button>
     </template>
 
@@ -121,7 +121,8 @@
 
     <template id="bathroom1">
       <img src="img/girls.png">
-      <p class="storytext"><span class="name"></span> finds a bathroom, where they encounter three women, who <span class="name"></span> recognizes as Charles Manson's girlfriends.</p>
+      <p class="storytext"><span class="name"></span> bursts into the closest bathroom. Inside are three singing women that are eerily similar to Charles Manson’s girlfriends.</p>
+      
       <button data-link="bathroom2">Next</button>
     </template>
 
@@ -212,6 +213,15 @@
       </div>
         
       <p class="storytext">As <span class="name"></span> turns to leave the hotel forever, the crowd begins to fade away.</p>
+
+      <button class="fadein" data-link="good_exit">Next</button>
+    </template>
+
+    <template id="good_exit">
+      <img class="horizontal-flip" src="img/intro.png" />
+      <p class="storytext">After leaving the hotel, <span class="name"></span> decides to drive back East. California is a silly place anyway.</p>
+    
+      <button class="fadein-quick" data-reset="true">Play Again?</button>
     </template>
 
     <template id="bad_end">
@@ -224,7 +234,8 @@
       <img src="img/nightman.png">
       <p class="storytext">The nightman looks at <span class="name"></span> and says, "Relax. We are programmed to recieve.
         You can check-out anytime you like, but you can never leave!</p>
-      <!-- <button data-link="runaway">Run</button> -->
+      
+      <button class="fadein" data-reset="true">Play Again?</button>
     </template>
 
     <script src="main.js"></script>
